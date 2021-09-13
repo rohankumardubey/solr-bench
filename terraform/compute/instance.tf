@@ -17,7 +17,7 @@ resource "google_compute_instance" "instance" {
     ssh-keys = "${var.user}:${file(var.public_key_path)}"
   }
 
-  min_cpu_platform = "${var.min_cpu_platform}"
+  min_cpu_platform = var.min_cpu_platform
 
   boot_disk {
     auto_delete = true
