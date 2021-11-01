@@ -285,7 +285,7 @@ public class SolrCloud {
    * @return String
    */
   public String getZookeeperAdminUrl() {
-    return zookeeper.getHost() + ":" + zookeeper.getAdminPort();
+    return "http://" + zookeeper.getHost() + ":" + zookeeper.getAdminPort();
   }
 
   /**

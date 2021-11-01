@@ -64,7 +64,7 @@ public class MetricsCollector implements Runnable {
 							zkMetrics.get(path).add(metric);
 						}
 					} catch (JSONException | IOException e1) {
-						log.debug("Couldn't get metrics from " + cloud.getZookeeperAdminUrl(), e1);
+						log.error("Couldn't get metrics from " + cloud.getZookeeperAdminUrl(), e1);
 					}
 				}
 				// Fetch Solr metrics
