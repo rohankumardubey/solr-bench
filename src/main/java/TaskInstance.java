@@ -18,6 +18,9 @@ public class TaskInstance {
 	
 	@JsonProperty("concurrency")
 	int concurrency = 1; // single threaded by default
+
+	@JsonProperty("threadpool")
+	String threadpool;
 	
 	@JsonProperty("parameters")
 	Map<String, String> parameters;

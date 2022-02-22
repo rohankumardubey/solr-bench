@@ -31,6 +31,9 @@ public class Workflow {
 	@JsonProperty("global-constants")
 	Map<String, String> globalConstants;
 
+	@JsonProperty("threadpools")
+	List<ThreadpoolInfo> threadpools = Collections.emptyList();
+
 	@JsonProperty("execution-plan")
 	Map<String, TaskInstance> executionPlan;
 	
@@ -40,4 +43,8 @@ public class Workflow {
 	@JsonProperty("zk-metrics")
 	public List<String> zkMetrics = Collections.emptyList();
 
+	static class ThreadpoolInfo {
+		public String name;
+		public int size;
+	}
 }
