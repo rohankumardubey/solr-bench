@@ -470,6 +470,10 @@ public class StressMain {
 
 		String collection = null;
 
+		if (type.command.contains("RANDOM_BOOLEAN")) {
+			solrurlMap.put("RANDOM_BOOLEAN", String.valueOf(new Random().nextBoolean()));
+		}
+
 		if (type.command.contains("RANDOM_COLLECTION")) {
 			try(CloudSolrClient client = new CloudSolrClient.Builder().withZkHost(cloud.getZookeeperUrl()).build()) {
 				log.info("Trying to get list of collections: ");

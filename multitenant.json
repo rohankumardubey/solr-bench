@@ -64,7 +64,7 @@
     },
 
     "modify-collection": {
-      "command": "${SOLRURL}admin/collections?action=MODIFYCOLLECTION&collection=${RANDOM_COLLECTION}&perReplicaState=true",
+      "command": "${SOLRURL}admin/collections?action=MODIFYCOLLECTION&collection=${RANDOM_COLLECTION}&perReplicaState=${RANDOM_BOOLEAN}",
       "defaults": {}
     },
 
@@ -127,7 +127,7 @@
     "task2c": {
       "description": "MODIFYCOLLECTION at random",
       "type": "modify-collection",
-      "instances": 40,
+      "instances": 200,
       "threadpool": "modify-threadpool",
       "wait-for": "task1",
       "mode": "async"
